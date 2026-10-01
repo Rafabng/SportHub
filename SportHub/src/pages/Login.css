@@ -1,0 +1,280 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: #0b1220;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+
+    background: #ffffff;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* CABEÇALHO */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    margin: 0 0 25px;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    color: #1769ff;
+}
+
+.login-header h2 {
+    margin: 0 0 10px;
+
+    font-size: 24px;
+
+    color: #172033;
+}
+
+.login-header p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #687386;
+}
+
+/* CAMPOS */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #263247;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d6dbe4;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #1769ff;
+
+    box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.12);
+}
+
+/* SENHA */
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 80px;
+}
+
+.show-password {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #1769ff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* ESQUECI SENHA */
+
+.forgot-password {
+    text-align: right;
+
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.forgot-password button {
+    border: none;
+    background: none;
+
+    color: #1769ff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+/* BOTÃO LOGIN */
+
+.login-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1769ff;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background: #0d56d8;
+}
+
+/* DIVISOR */
+
+.divider {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #8a93a3;
+
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e0e4ea;
+}
+
+/* GOOGLE */
+
+.google-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d6dbe4;
+    border-radius: 8px;
+
+    background: white;
+
+    color: #263247;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* CADASTRO */
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: #687386;
+}
+
+.register button {
+    border: none;
+    background: none;
+
+    color: #1769ff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+/* ACESSAR SEM LOGIN */
+
+.guest-button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 10px;
+
+    border: none;
+    background: transparent;
+
+    color: #687386;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.guest-button:hover {
+    color: #1769ff;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-header h1 {
+        font-size: 30px;
+    }
+
+    .login-header h2 {
+        font-size: 21px;
+    }
+}
