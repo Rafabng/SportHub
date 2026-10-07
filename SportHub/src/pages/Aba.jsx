@@ -5,7 +5,7 @@ export default function Aba() {
 
 
     return (
-        <aside className="sidebar"> 
+        <aside className="sidebar">
             
             <div>
                 <h1>SportHub</h1>
