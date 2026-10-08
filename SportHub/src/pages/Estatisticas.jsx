@@ -1,10 +1,41 @@
-import Aba from "../pages/Aba";
-import MatchHeader from "../pages/MatchHeader";
-import MatchTabs from "../pages/MatchTabs";
-import StatRow from "../pages/StatRow";
-import MatchEvents from "../pages/MatchEvents";
+import Aba from "./Aba";
+import MatchHeader from "./MatchHeader";
+import MatchTabs from "./MatchTabs";
+import StatRow from "./StatRow";
+import MatchEvents from "./MatchEvents";
 
 export default function Estatisticas({aoNavegar}) {
+
+    return (
+        <>
+            <Aba
+                aoNavegar={aoNavegar}
+                paginaAtual="estatisticas"
+            />
+
+            <main className="main-content">
+
+                <MatchHeader />
+                <MatchTabs />
+
+                <section className="statistics">
+                    <h2>Estatísticas</h2>
+
+                    <StatRow 
+                        nome="Posse de bola"
+                        casa="55"
+                        visitante="45"
+                    />
+                </section>
+                {/* <h1>Tela de Estatísticas</h1> */}
+
+                <button onClick={() => aoNavegar("home")}>
+                    Voltar para Home
+                </button>
+
+            </main>
+        </>
+    );
 
     return (
         <>
