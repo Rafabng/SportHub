@@ -1,0 +1,163 @@
+header {
+  width: 100%;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 auto;
+
+  background: #071525;
+  color: #fff;
+}
+
+.logo-png {
+    width: 180px;
+    height: 80px;
+    padding: 0 0 0 20px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  height: 38px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  background: #14263c;
+
+  border: 1px solid #263d57;
+
+  border-radius: 8px;
+
+}
+
+.search-bar input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 0 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.search-bar input::placeholder {
+
+    color: #8291a5;
+}
+
+.search-bar:focus-within {
+  border-color: #8ee63f;
+}
+
+.header-actions {
+  width: 280px;
+  padding: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   BOTÃO DE NOTIFICAÇÃO
+========================= */
+
+.notification-button {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.notification-button:hover {
+  background: #14263c;
+
+  color: #fff;
+}
+
+/* =========================
+   BOTÃO DO USUÁRIO
+========================= */
+
+.user-button {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 20px 0 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8795a8;
+
+  cursor: pointer;
+}
+
+.user-button:hover {
+  color: #fff;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1769e0;
+
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 600;
+}
