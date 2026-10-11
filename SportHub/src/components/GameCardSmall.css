@@ -1,0 +1,99 @@
+.game-card {
+    width: calc(50% - 140px);
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 16px;
+    border: 1px solid #f3efef;
+    border-radius: 16px;
+
+    background-color: #262c3a;
+    color: white;
+}
+
+/* Cabeçalho: campeonato e situação */
+.game-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.game-card-head a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.game-card-head a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Times e placar na mesma linha */
+.game-card-mid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Cada time */
+.team {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.team img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.team span {
+    font-size: 14px;
+}
+
+/* Placar centralizado */
+.game-score {
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.game-score div {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.game-score small {
+    display: block;
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.game-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #f3efef;
+
+    color: #f3efef;
+    font-size: 14px;
+}
+
+.game-card-footer a:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
