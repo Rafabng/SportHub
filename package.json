@@ -1,0 +1,20 @@
+{
+  "name": "sporthub",
+  "version": "1.0.0",
+  "description": "Sistema de acompanhamento esportivo, vulgo SportHub.",
+  "homepage": "https://github.com/vitorcunha-se/SportHub#readme",
+  "bugs": {
+    "url": "https://github.com/vitorcunha-se/SportHub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorcunha-se/SportHub.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
