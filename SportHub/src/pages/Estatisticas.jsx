@@ -2,11 +2,11 @@ import { useState } from "react";
 import Header from "../components/Header.jsx";
 import NavBar from "../components/NavBar.jsx";
 import partidaExemplo from "../data/partida.js";
-import MatchHeader from "./MatchHeader.jsx";
-import MatchTabs from "./MatchTabs.jsx";
-import MatchStats from "./MatchStats.jsx";
-import WhereToWatch from "./WhereToWatch.jsx";
-import MatchVenue from "./MatchVenue.jsx";
+import MatchHeader from "../components/MatchHeader.jsx";
+import MatchTabs from "../components/MatchTabs.jsx";
+import MatchStats from "../components/MatchStats.jsx";
+import WhereToWatch from "../components/WhereToWatch.jsx";
+import MatchVenue from "../components/MatchVenue.jsx";
 import "./Estatisticas.css";
 
 const ABAS = [
