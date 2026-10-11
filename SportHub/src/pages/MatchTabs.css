@@ -1,0 +1,41 @@
+/* ===== Abas da partida ===== */
+.match-tabs {
+    display: flex;
+    gap: clamp(18px, 3vw, 36px);
+    margin-top: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: inset 0 -1px 0 var(--match-borda);
+}
+
+.match-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.match-tab {
+    padding: 14px 2px 12px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--match-muted);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.match-tab:hover {
+    color: var(--match-texto);
+}
+
+.match-tab[aria-selected="true"] {
+    border-bottom-color: var(--match-azul);
+    color: var(--match-azul);
+    font-weight: 600;
+}
+
+.match-tab:focus-visible {
+    outline: 2px solid var(--match-azul);
+    outline-offset: -2px;
+    border-radius: 6px;
+}

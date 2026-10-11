@@ -1,7 +1,8 @@
-export default function StatRow({nome, casa = 0, visitante = 0}) {
+/** Linha de comparação entre os dois times */
+export default function StatRow({nome, casa = 0, visitante = 0, nomeCasa, nomeVisitante, unidade = "", destaque = false}) {
 
-    const valorCasa = parseInt(casa) || 0;
-    const valorVisitante = parseInt(visitante) || 0;
+    const valorCasa = Number(casa) || 0;
+    const valorVisitante = Number(visitante) || 0;
 
     const total = valorCasa + valorVisitante;
 
@@ -12,7 +13,7 @@ export default function StatRow({nome, casa = 0, visitante = 0}) {
         <div className="stat-row">
 
             <div className="stat-values">
-                <strong>{casa}</strong>
+                <strong>{casa}</strong> 
                 <span>{nome}</span>
                 <strong>{visitante}</strong>
             </div>

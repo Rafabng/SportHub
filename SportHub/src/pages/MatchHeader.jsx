@@ -1,3 +1,4 @@
+import "./MatchHeader.css";
 
 export default function MatchHeader() {
 
