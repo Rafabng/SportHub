@@ -1,163 +1,251 @@
 header {
-  width: 100%;
-  height: 68px;
+    width: 100%;
+    min-height: 68px;
+    box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 
-  padding: 0 auto;
+    padding: 0 24px;
 
-  background: #071525;
-  color: #fff;
+    background: #071525;
+    color: #fff;
 }
 
+/* LOGO */
 .logo-png {
     width: 180px;
-    height: 80px;
-    padding: 0 0 0 20px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
+.logo-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* BARRA DE PESQUISA */
 .search-bar {
-  width: 100%;
-  max-width: 500px;
-  height: 38px;
+    display: flex;
+    align-items: center;
 
-  margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    height: 38px;
+    box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
+    margin: 0 auto;
+    padding: 0 10px;
 
-  padding: 0 10px;
+    background: #14263c;
+    border: 1px solid #263d57;
+    border-radius: 8px;
 
-  background: #14263c;
-
-  border: 1px solid #263d57;
-
-  border-radius: 8px;
-
+    transition: border-color 0.2s ease;
 }
 
 .search-bar input {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
 
-  padding: 0 0 0 10px;
+    padding: 0 0 0 10px;
+    border: none;
+    outline: none;
 
-  border: none;
-  outline: none;
+    background: transparent;
+    color: #fff;
 
-  background: transparent;
-
-  color: #fff;
-
-  font-family: inherit;
-  font-size: 13px;
+    font-family: inherit;
+    font-size: 13px;
 }
 
 .search-bar input::placeholder {
-
     color: #8291a5;
 }
 
 .search-bar:focus-within {
-  border-color: #8ee63f;
+    border-color: #8ee63f;
 }
 
+/* AÇÕES DO CABEÇALHO */
 .header-actions {
-  width: 280px;
-  padding: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  gap: 18px;
-
-  flex-shrink: 0;
+    gap: 20px;
+    width: auto;
+    flex-shrink: 0;
+    padding: 0;
 }
 
-
-/* =========================
-   BOTÃO DE NOTIFICAÇÃO
-========================= */
-
+/* BOTÃO DE NOTIFICAÇÃO */
 .notification-button {
-  position: relative;
+    position: relative;
 
-  width: 36px;
-  height: 36px;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  padding: 0;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
 
-  border: none;
+    background: transparent;
+    color: #cbd5e1;
 
-  background: transparent;
+    cursor: pointer;
 
-  color: #cbd5e1;
-
-  cursor: pointer;
-
-  border-radius: 8px;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .notification-button:hover {
-  background: #14263c;
-
-  color: #fff;
+    background: #14263c;
+    color: #fff;
 }
 
-/* =========================
-   BOTÃO DO USUÁRIO
-========================= */
-
+/* BOTÃO DO USUÁRIO */
 .user-button {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  gap: 8px;
+    padding: 0;
+    border: none;
 
-  padding: 0 20px 0 0;
+    background: transparent;
+    color: #8795a8;
 
-  border: none;
-
-  background: transparent;
-
-  color: #8795a8;
-
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .user-button:hover {
-  color: #fff;
+    color: #fff;
 }
 
-
-/* =========================
-   AVATAR
-========================= */
-
+/* AVATAR */
 .user-avatar {
-  width: 38px;
-  height: 38px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid #3985f6;
+    border-radius: 50%;
 
-  background: #1769e0;
+    background: #1769e0;
+    color: #fff;
 
-  color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
 
-  font-size: 15px;
-  font-weight: 600;
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    width: max-content;
+    flex-shrink: 0;
+}
+
+.login-button,
+.register-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 16px;
+    margin: 0;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.login-button {
+    border: 1px solid #263d57;
+    background: transparent;
+    color: white;
+}
+
+.login-button:hover {
+    background: #14263c;
+}
+
+.register-button {
+    border: 1px solid #1769e0;
+    background: #1769e0;
+    color: white;
+}
+
+.register-button:hover {
+    background: #1258bd;
+}
+
+/* TELAS MENORES */
+@media (max-width: 700px) {
+    header {
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .logo-png {
+        width: 100px;
+        height: 48px;
+    }
+
+    .search-bar {
+        max-width: none;
+    }
+
+    .header-actions {
+        width: auto;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo-png {
+        width: 64px;
+    }
+
+    .search-bar {
+        height: 34px;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+    }
 }

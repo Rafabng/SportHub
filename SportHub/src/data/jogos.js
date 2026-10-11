@@ -1,4 +1,4 @@
-import time from "./times";
+import time from "./times.js";
 
 const jogos = [
     {

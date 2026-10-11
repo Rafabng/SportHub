@@ -22,9 +22,14 @@
     border-bottom: 1px solid #f3efef;
 }
 
-.game-card-head span:first-child {
-    font-size: 16px;
+.game-card-head a {
+    font-size: 20px;
     font-weight: 600;
+}
+
+.game-card-head a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .game-card-head span:last-child {
@@ -102,7 +107,7 @@
 .game-card-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
 
     padding-top: 20px;
 
@@ -112,7 +117,8 @@
     font-size: 14px;
 }
 
-.game-card-footer span:last-child {
+.game-card-footer a:hover {
     color: white;
     cursor: pointer;
+    text-decoration: underline;
 }

@@ -1,47 +1,50 @@
-import time from "../data/times";
-import jogo from "../data/jogos";
-import "./GameCard.css";
+import "./GameCardBig.css";
 
-function GameCardBig(){
+export default function GameCardBig({ jogo, aoNavegar }){
     return(
         <div className="game-card-principal">
 
             <div className="game-card-head">
-                <span>{jogo[0].campeonato}</span>
-                <span>{jogo[0].situacao}</span>
+                <a>{jogo.campeonato}</a>
+                <span>{jogo.situacao}</span>
             </div>
 
             <div className="game-card-mid">
 
                 <div className="team team-home">
-                    <img src={jogo[0].timeCasa.logo} alt={jogo[0].timeCasa.nome} />
-                    <span>{jogo[0].timeCasa.nome}</span>
+                    <img src={jogo.timeCasa.logo} alt={jogo.timeCasa.nome} />
+                    <span>{jogo.timeCasa.nome}</span>
                 </div>
 
                 <div className="game-score">
                     <div>
-                        <span>{jogo[0].placarCasa}</span>
+                        <span>{jogo.placarCasa}</span>
                         <span>:</span>
-                        <span>{jogo[0].placarVisitante}</span>
+                        <span>{jogo.placarVisitante}</span>
                     </div>
 
-                    <small>{jogo[0].minuto}</small>
+                    <small>{jogo.minuto}</small>
                 </div>
 
                 <div className="team team-away">
-                    <img src={jogo[0].timeVisitante.logo} alt={jogo[0].timeVisitante.nome} />
-                    <span>{jogo[0].timeVisitante.nome}</span>
+                    <img src={jogo.timeVisitante.logo} alt={jogo.timeVisitante.nome} />
+                    <span>{jogo.timeVisitante.nome}</span>
                 </div>
 
             </div>
 
             <div className="game-card-footer">
-                <span>Clique para ver detalhes</span>
-                <span>Ver partidas →</span>
+                <a
+                    href="#"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        aoNavegar("estatisticas");
+                    }}
+                >
+                    Clique para ver detalhes →
+                </a>
             </div>
 
         </div>
     );
 }
-
-export default GameCardBig;
