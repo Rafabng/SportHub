@@ -1,0 +1,93 @@
+/* ===== Estatísticas (barras de comparação) ===== */
+.stat-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 20px;
+}
+
+.stat {
+    display: grid;
+    gap: 8px;
+}
+
+.stat__linha {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.stat__valor {
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat__valor--visitante {
+    text-align: right;
+}
+
+.stat__nome {
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Duas metades: a do mandante cresce da direita p/ esquerda, a do visitante o contrário */
+.stat__barras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    height: 5px;
+}
+
+.stat__trilho {
+    display: flex;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--match-trilho);
+}
+
+.stat__trilho--casa {
+    justify-content: flex-end;
+}
+
+.stat__preenchimento {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+}
+
+.stat__preenchimento--casa {
+    background: var(--cor-casa);
+}
+
+.stat__preenchimento--visitante {
+    background: var(--cor-visitante);
+}
+
+/* Destaque (posse de bola): números grandes + barra única dividida */
+.stat--destaque {
+    gap: 10px;
+}
+
+.stat--destaque .stat__valor {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.stat--destaque .stat__nome {
+    font-size: 14px;
+}
+
+.stat__divisao {
+    display: flex;
+    gap: 4px;
+    height: 9px;
+}
+
+.stat__divisao .stat__preenchimento {
+    flex-grow: 0;
+    flex-shrink: 0;
+}

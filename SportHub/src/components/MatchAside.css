@@ -1,0 +1,101 @@
+/* ===== Coluna lateral: onde assistir + local do jogo ===== */
+.canal-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+}
+
+.canal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.canal__icone {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.canal__nome,
+.canal__tipo {
+    display: block;
+}
+
+.canal__nome {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.canal__tipo {
+    margin-top: 2px;
+    color: var(--match-muted);
+    font-size: 12px;
+}
+
+.local {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.local__nome {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.local__cidade {
+    margin: 2px 0 14px;
+    color: var(--match-muted);
+    font-size: 13px;
+}
+
+.local__mapa {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border: 1px solid var(--match-azul);
+    border-radius: 8px;
+    color: var(--match-azul);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.local__mapa:hover {
+    background: #eaf1fd;
+}
+
+.local__mapa:focus-visible {
+    outline: 2px solid var(--match-azul);
+    outline-offset: 2px;
+}
+
+.local__foto {
+    width: 104px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.local__foto--vazia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #dfe8f5, #c5d4ea);
+    color: #6f86a8;
+}

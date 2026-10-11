@@ -1,0 +1,256 @@
+/* ===== Cabeçalho da partida (placar) ===== */
+.match-hero {
+    display: grid;
+    gap: 14px;
+}
+
+.match-voltar {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    border: 0;
+    background: none;
+    color: var(--match-azul);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.match-voltar:hover {
+    text-decoration: underline;
+}
+
+/* Linha: competição + ações */
+.match-competicao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.match-competicao__nome {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.match-competicao__icone {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--match-azul);
+    color: #fff;
+}
+
+.match-competicao__rodada {
+    color: var(--match-muted);
+    font-weight: 400;
+}
+
+.match-competicao__rodada::before {
+    content: "•";
+    margin-right: 10px;
+}
+
+.match-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.match-acao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid #d3dbe8;
+    border-radius: 8px;
+    background: var(--match-card);
+    color: var(--match-texto);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.match-acao:hover {
+    background: #eef3fa;
+}
+
+.match-acao[aria-pressed="true"] {
+    border-color: var(--match-azul);
+    color: var(--match-azul);
+}
+
+/* Botão de ícone (estrela de favoritar time) */
+.match-icone-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    color: var(--match-muted);
+    cursor: pointer;
+}
+
+.match-icone-btn:hover {
+    background: #e6edf7;
+    color: var(--match-texto);
+}
+
+.match-icone-btn[aria-pressed="true"] {
+    color: #e5a712;
+}
+
+.match-acao:focus-visible,
+.match-icone-btn:focus-visible,
+.match-voltar:focus-visible {
+    outline: 2px solid var(--match-azul);
+    outline-offset: 2px;
+}
+
+/* Placar: [time + gols] [status] [gols + time] e, abaixo, os marcadores */
+.match-placar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    column-gap: clamp(16px, 3vw, 40px);
+    row-gap: 12px;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.match-lado {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 4vw, 56px);
+}
+
+.match-lado--casa {
+    justify-content: flex-end;
+}
+
+.match-lado--visitante {
+    justify-content: flex-start;
+}
+
+.match-placar__gols {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.match-time {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+.match-time__escudo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-time__nome {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.match-crest {
+    display: block;
+    object-fit: contain;
+}
+
+.match-status {
+    min-width: 120px;
+    display: grid;
+    gap: 4px;
+    text-align: center;
+}
+
+.match-status p {
+    margin: 0;
+}
+
+.match-status__situacao {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.match-status__data {
+    color: var(--match-muted);
+    font-size: 13px;
+}
+
+/* Marcadores dos gols */
+.match-gols {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    align-self: start;
+    color: var(--match-muted);
+    font-size: 13px;
+}
+
+.match-gols--casa {
+    grid-column: 1;
+    justify-self: end;
+}
+
+.match-gols--visitante {
+    grid-column: 3;
+    justify-self: start;
+}
+
+.match-gol {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-gols--casa .match-gol {
+    justify-content: flex-end;
+}
+
+.match-gol__minuto {
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+    .match-placar {
+        column-gap: 12px;
+    }
+
+    .match-lado {
+        gap: 12px;
+    }
+
+    .match-crest {
+        width: 44px;
+        height: auto;
+    }
+
+    .match-time__nome {
+        font-size: 14px;
+    }
+
+    .match-status {
+        min-width: 76px;
+    }
+}
