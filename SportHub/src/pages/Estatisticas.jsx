@@ -24,8 +24,8 @@ export default function Estatisticas({ usuario, aoNavegar, partida = partidaExem
     const aba = ABAS.find((item) => item.id === abaAtiva);
 
     const coresDosTimes = {
-        "--cor-casa": partidaExemplo.casa.cor,
-        "--cor-visitante": partidaExemplo.visitante.cor
+        "--cor-casa": partida.casa.cor,
+        "--cor-visitante": partida.visitante.cor
     };
 
     return (

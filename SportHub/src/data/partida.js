@@ -1,11 +1,10 @@
 /* Dados de exemplo da tela de estatísticas */
-
-import { Minimize } from "lucide-react";
+import time from "./times.js";
 
 const partida = {
-    id: "fla-pal-2026-r23",
+    id: "rel-bar-2026-r23",
     competicao: {
-        nome: "Brasileirão Série A 2026",
+        nome: "La Liga 2026",
         rodada: "Rodada 23"
     },
     status: "Encerrado",
@@ -13,16 +12,16 @@ const partida = {
 
     // Logo (caso não houver, <TeamCrest> utiliza a sigla como escudo)
     casa: {
-        nome: "Flamengo",
-        sigla: "FLA",
-        cor: "#d9363e",
-        logo: null
+        nome: time[0].nome,
+        sigla: "RM",
+        cor: "#ffffff",
+        logo: time[0].logo
     },
     visitante: {
-        nome: "Palmeiras",
-        sigla: "PAL",
-        cor: "#2f9e57",
-        logo: null
+        nome: time[1].nome,
+        sigla: "BAR",
+        cor: "#9e2f2f",
+        logo: time[1].logo
     },
     placar: {
         casa: 2,
@@ -31,17 +30,17 @@ const partida = {
     gols: {
         casa: [
             {
-                jogador: "Pedro",
+                jogador: "Vini JR.",
                 minuto: 12
             },
             {
-                jogador: "Arrascaeta", 
+                jogador: "Valverde", 
                 minuto: 78
             }
         ],
         visitante: [
             {
-                jogador: "Endrick",
+                jogador: "Gabriel Jesus",
                 minuto: 64
             }
         ]
@@ -57,72 +56,72 @@ const partida = {
             destaque: true
         },
         {
-            id: "posse",
-            nome: "Posse de bola",
-            casa: 58,
-            visitante: 42,
-            unidade: "%",
+            id: "golsEsperados",
+            nome: "Gols Esperados",
+            casa: 3.68,
+            visitante: 1.50,
+            unidade: "",
             destaque: true
         },
         {
-            id: "posse",
-            nome: "Posse de bola",
-            casa: 58,
-            visitante: 42,
-            unidade: "%",
+            id: "finalizacoes",
+            nome: "Finalizações",
+            casa: 10,
+            visitante: 9,
+            unidade: "",
             destaque: true
         },
         {
-            id: "posse",
-            nome: "Posse de bola",
-            casa: 58,
-            visitante: 42,
-            unidade: "%",
+            id: "finalizacoesGol",
+            nome: "Finalizações ao gol",
+            casa: 8,
+            visitante: 6,
+            unidade: "",
             destaque: true
         },
         {
-            id: "posse",
-            nome: "Posse de bola",
-            casa: 58,
-            visitante: 42,
-            unidade: "%",
+            id: "defesas",
+            nome: "Defesas",
+            casa: 6,
+            visitante: 5,
+            unidade: "",
             destaque: true
         },
         {
-            id: "posse",
-            nome: "Posse de bola",
-            casa: 58,
-            visitante: 42,
-            unidade: "%",
+            id: "finalizacoesArea",
+            nome: "Finalizações dentro da área",
+            casa: 4,
+            visitante: 4,
+            unidade: "",
             destaque: true
         },
     ],
     transmissoes: [
         {
             id: "premiere",
-            nome: "Premiere",
+            nome: " Premiere",
             tipo: "TV por assinatura",
             sigla: "P",
             cor: "#12a36b"
         },
         {
-            id: "premiere",
-            nome: "Premiere",
-            tipo: "TV por assinatura",
-            sigla: "P",
-            cor: "#12a36b"
+            id: "getv",
+            nome: " GE TV",
+            tipo: "Streaming",
+            sigla: "GE",
+            cor: "#00b96c"
         },
         {
-            id: "premiere",
-            nome: "Premiere",
-            tipo: "TV por assinatura",
-            sigla: "P",
-            cor: "#12a36b"
+            id: "caze",
+            nome: " Cazé TV",
+            tipo: "Streaming",
+            sigla: "C",
+            cor: "#a57a03"
         },
     ],
     estadio: {
-        nome: "Maracanã",
-        cidade: "Rio de Janeiro - RJ",
+        nome: time[0].estadio,
+        cidade: "Madrid - ES",
         foto: null
     },
 };

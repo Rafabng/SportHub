@@ -1,15 +1,14 @@
 /* Pag. de estatísticas de determinada partida */
-
 .match-page {
     /* Variáveis */
-    --match-bg: #f3f6fb;
-    --match-card: #ffffff;
-    --match-borda: #e2e8f1;
+    --match-bg: #071525;
+    --match-card: #262c3a;
+    --match-borda: #262c3a;
     --match-trilho: #e8edf4;
-    --match-texto: #13243b;
+    --match-texto: #cbcccc;
     --match-muted: #66768c;
     --match-azul: #1a67d8;
-
+ 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -81,4 +80,10 @@
     .match-card {
         padding: 16px;
     }
+}
+
+ul {
+  list-style: none; /* Remove os marcadores */
+  padding: 0;       /* Opcional: remove o espaçamento padrão */
+  margin: 0;        /* Opcional: remove a margem padrão */
 }

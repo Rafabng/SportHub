@@ -6,10 +6,9 @@ export default function WhereToWatch({ transmissoes }) {
             <ul className="canal-lista">
                 {transmissoes.map((canal) => (
                     <li key={canal.id} className="canal">
-                        <span className="canal__icone" style={{ background: canal.cor}} aria-hidden="true">{canal.sigla}</span>
                         <span>
                             <span className="canal__nome">{canal.nome}</span>
-                            <span className="canal__tipo">{canal.tipo}</span>
+                            <span className="canal__tipo"> • {canal.tipo}</span>
                         </span>
                     </li>
                 ))}
