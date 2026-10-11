@@ -1,12 +1,23 @@
 import "./GameCardSmall.css";
 
+function getClasseIndicador(situacao) {
+  if (situacao === "Ao Vivo") {
+    return "indicador-ao-vivo";
+  } else {
+    return "indicador-finalizado";
+  }
+}
+
 export default function GameCardSmall ({ jogo, aoNavegar }) {
     return (
         <div className="game-card">
 
             <div className="game-card-head">
                 <a>{jogo.campeonato}</a>
-                <span>{jogo.situacao}</span>
+                <div>
+                    <span className={getClasseIndicador(jogo.situacao)} />
+                    <span>{jogo.situacao}</span>
+                </div>
             </div>
 
             <div className="game-card-mid">

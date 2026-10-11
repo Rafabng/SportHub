@@ -40,11 +40,11 @@ export default function Home({ usuario, aoNavegar }) {
                     aoNavegar={aoNavegar}
                 />
                 <GameCardSmall 
-                    jogo={jogos[1]}
+                    jogo={jogos[2]}
                     aoNavegar={aoNavegar}
                 />
                 <GameCardSmall 
-                    jogo={jogos[2]}
+                    jogo={jogos[1]}
                     aoNavegar={aoNavegar}
                 />
             </div>
