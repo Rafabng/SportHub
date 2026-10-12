@@ -32,6 +32,17 @@
     cursor: pointer;
 }
 
+.game-card-head div{
+    padding: 5px 10px;
+    display: flex;
+    justify-content: left;
+
+    border: 1px solid #f3efef;
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
 /* Times e placar na mesma linha */
 .game-card-mid {
     display: flex;
@@ -96,4 +107,27 @@
     color: white;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.indicador-ao-vivo {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: red;
+    animation: piscar 1s infinite;
+}
+
+.indicador-finalizado {
+  background-color: gray;
+}
+
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }

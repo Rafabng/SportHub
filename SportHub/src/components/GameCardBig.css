@@ -32,8 +32,10 @@
     cursor: pointer;
 }
 
-.game-card-head span:last-child {
+.game-card-head div{
     padding: 5px 10px;
+    display: flex;
+    justify-content: left;
 
     border: 1px solid #f3efef;
     border-radius: 20px;
@@ -121,4 +123,35 @@
     color: white;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.indicador-ao-vivo {
+    margin: 4px 5px 0 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff3333;
+
+    flex-shrink: 0;
+    animation: piscar 1s infinite;
+}
+
+.indicador-finalizado {
+    margin: 4px 5px 0 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+
+    flex-shrink: 0;
+}
+
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
