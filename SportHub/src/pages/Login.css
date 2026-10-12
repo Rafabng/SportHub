@@ -1,16 +1,11 @@
 :root {
-    /* Cores de Fundo */
     --bg-main: #0b1220;
     --bg-card-dark: #131b2e;
     --bg-form-light: #ffffff;
-
-    /* Cores de Texto e Bordas */
-    --text-black: #000000; /* Letras pretas para alta visibilidade */
+    --text-black: #000000;
     --text-white: #ffffff;
     --text-muted: #8a93a3;
     --border-light: #cbd5e1;
-
-    /* Destaques */
     --accent-blue: #1769ff;
     --accent-hover: #0d56d8;
 }
@@ -29,19 +24,17 @@
     padding: 20px;
 }
 
-/* CARTÃO PRINCIPAL (Melhoria nos Contornos) */
 .login-card {
     width: 100%;
     max-width: 400px;
     background: var(--bg-card-dark);
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    overflow: hidden; /* Garante que os cantos internos fiquem arredondados */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* CABEÇALHO (Correção do texto esmagado) */
 .login-header {
     padding: 35px 30px 25px 30px;
     text-align: center;
@@ -68,14 +61,12 @@
     margin: 0;
 }
 
-/* CAIXA DO FORMULÁRIO (Fundo branco para letras pretas) */
 .login-form-container {
     background: var(--bg-form-light);
     padding: 30px;
-    border-radius: 20px 20px 0 0; /* Arredonda apenas o topo para encaixar perfeitamente */
+    border-radius: 20px 20px 0 0;
 }
 
-/* GRUPO DE INPUTS */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -83,27 +74,26 @@
 }
 
 .input-group label {
-    color: #1e293b; /* Cinza bem escuro/quase preto */
+    color: #1e293b;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
-/* CAMPOS DE TEXTO (Letras Pretas e Alta Visibilidade) */
 .input-group input {
     width: 100%;
     padding: 14px 16px;
-    background: #f8fafc; /* Fundo cinza super claro */
+    background: #f8fafc;
     border: 1px solid var(--border-light);
     border-radius: 8px;
     font-size: 15px;
-    color: var(--text-black); /* LETRAS PRETAS GARANTIDAS */
+    color: var(--text-black);
     outline: none;
     transition: 0.2s;
 }
 
 .input-group input::placeholder {
-    color: #94a3b8; /* Placeholder sutil */
+    color: #94a3b8;
 }
 
 .input-group input:focus {
@@ -112,7 +102,6 @@
     box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.15);
 }
 
-/* CORREÇÃO DO BOTÃO "MOSTRAR" DENTRO DA SENHA */
 .password-input-wrapper {
     position: relative;
     display: flex;
@@ -120,7 +109,7 @@
 }
 
 .password-input-wrapper input {
-    padding-right: 80px; /* Cria espaço interno para o botão não sobrepor o texto */
+    padding-right: 80px;
 }
 
 .show-password {
@@ -134,7 +123,6 @@
     cursor: pointer;
 }
 
-/* BOTÃO ENTRAR */
 .btn-entrar {
     width: 100%;
     margin-top: 10px;

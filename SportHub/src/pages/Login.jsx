@@ -6,14 +6,12 @@ const Login = () => {
         <main className="login-container">
             <div className="login-card">
 
-                {/* Cabeçalho Escuro */}
                 <div className="login-header">
                     <h1>SportHub</h1>
                     <h2>Entre na<br/>sua conta</h2>
                     <p>Acompanhe seu time do coração, jogos e competições favoritas em um só lugar.</p>
                 </div>
 
-                {/* Área do Formulário Clara (Foco na Visibilidade) */}
                 <div className="login-form-container">
                     <form>
                         <div className="input-group">
