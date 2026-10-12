@@ -7,10 +7,10 @@ const jogos = [
         horario: '21:00',
         campeonato: 'La Liga',
         estadio: time[0].estadio,
-        placarCasa: 0,
-        placarVisitante: 2,
+        placarCasa: 2,
+        placarVisitante: 1,
         situacao: 'Ao Vivo',
-        minuto: 73
+        minuto: "73:28"
     },
 
     {
@@ -22,7 +22,7 @@ const jogos = [
         placarCasa: 2,
         placarVisitante: 1,
         situacao: 'Ao Vivo',
-        minuto: 28
+        minuto: "28:12"
 
     },
 
@@ -35,7 +35,7 @@ const jogos = [
         placarCasa: 3,
         placarVisitante: 0,
         situacao: 'Finalizado',
-        minuto: 90
+        minuto: "90:00"
     },
 ];
 

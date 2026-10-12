@@ -140,3 +140,7 @@
 .btn-entrar:hover {
     background: var(--accent-hover);
 }
+
+.logo-png-login {
+    width: 300px;
+}

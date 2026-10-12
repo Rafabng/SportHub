@@ -10,8 +10,6 @@
     color: white;
 }
 
-/* ---------------- HEADER ---------------- */
-
 .game-card-head {
     display: flex;
     align-items: center;
@@ -43,8 +41,6 @@
     font-size: 13px;
 }
 
-/* ---------------- MEIO ---------------- */
-
 .game-card-mid {
     display: flex;
     align-items: center;
@@ -54,8 +50,6 @@
 
     padding: 40px 20px;
 }
-
-/* TIMES */
 
 .team {
     display: flex;
@@ -79,8 +73,6 @@
     font-weight: 500;
 }
 
-/* PLACAR */
-
 .game-score {
     display: flex;
     flex-direction: column;
@@ -103,8 +95,6 @@
     color: #aaa;
     font-size: 14px;
 }
-
-/* ---------------- FOOTER ---------------- */
 
 .game-card-footer {
     display: flex;

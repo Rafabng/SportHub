@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import logo from "../assets/logo-sportshub.png";
+
 import './Login.css';
 
 export default function Login({ aoLogar }) {
@@ -21,8 +23,8 @@ export default function Login({ aoLogar }) {
             <div className="login-card">
 
                 <div className="login-header">
-                    <h1>SportHub</h1>
-                    <h2>Entre na<br/>sua conta</h2>
+                    <img src={logo} alt="SportHub" className='logo-png-login'/>
+                    <h2>Entre na sua conta</h2>
                     <p>Acompanhe seu time do coração, jogos e competições favoritas em um só lugar.</p>
                 </div>
 

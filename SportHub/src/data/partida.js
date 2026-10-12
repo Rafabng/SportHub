@@ -7,7 +7,7 @@ const partida = {
         nome: "La Liga 2026",
         rodada: "Rodada 23"
     },
-    status: "Encerrado",
+    status: "73:28",
     dataHora: "2026-09-02T21:30:00-03:00",
 
     // Logo (caso não houver, <TeamCrest> utiliza a sigla como escudo)
@@ -35,7 +35,7 @@ const partida = {
             },
             {
                 jogador: "Valverde", 
-                minuto: 78
+                minuto: 73
             }
         ],
         visitante: [

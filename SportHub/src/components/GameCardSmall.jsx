@@ -10,7 +10,7 @@ function getClasseIndicador(situacao) {
 
 export default function GameCardSmall ({ jogo, aoNavegar }) {
     return (
-        <div className="game-card">
+        <main className="game-card">
 
             <div className="game-card-head">
                 <a>{jogo.campeonato}</a>
@@ -56,6 +56,6 @@ export default function GameCardSmall ({ jogo, aoNavegar }) {
                 </a>
             </div>
 
-        </div>
+        </main>
     );
 }

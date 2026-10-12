@@ -11,7 +11,6 @@
     color: white;
 }
 
-/* Cabeçalho: campeonato e situação */
 .game-card-head {
     display: flex;
     justify-content: space-between;
@@ -43,7 +42,6 @@
     font-size: 13px;
 }
 
-/* Times e placar na mesma linha */
 .game-card-mid {
     display: flex;
     align-items: center;
@@ -51,7 +49,6 @@
     gap: 8px;
 }
 
-/* Cada time */
 .team {
     display: flex;
     align-items: center;
@@ -69,7 +66,6 @@
     font-size: 14px;
 }
 
-/* Placar centralizado */
 .game-score {
     flex-shrink: 0;
     text-align: center;
