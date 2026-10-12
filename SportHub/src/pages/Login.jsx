@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 
-const Login = () => {
+export default function Login({ aoLogar }) {
+
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [mostrarSenha, setMostrarSenha] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        /* Garante que os dois estejam informados */
+        if (email && senha) {
+            aoLogar(email);
+        }
+    };
+
     return (
         <main className="login-container">
             <div className="login-card">
@@ -13,17 +27,40 @@ const Login = () => {
                 </div>
 
                 <div className="login-form-container">
-                    <form>
+
+                    <form onSubmit={handleSubmit}>
                         <div className="input-group">
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" id="email" placeholder="Digite seu e-mail" required />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Digite seu e-mail" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} 
+                                required 
+                            />
                         </div>
 
                         <div className="input-group">
                             <label htmlFor="senha">Senha</label>
                             <div className="password-input-wrapper">
-                                <input type="password" id="senha" placeholder="Digite sua senha" required />
-                                <button type="button" className="show-password">Mostrar</button>
+
+                                <input 
+                                    type={mostrarSenha ? "text" : "password"} 
+                                    id="senha" 
+                                    placeholder="Digite sua senha" 
+                                    value={senha}
+                                    onChange={(e) => setSenha(e.target.value)}
+                                    required 
+                                />
+                                
+                                <button 
+                                    type="button" 
+                                    className="show-password"
+                                    onClick={() => setMostrarSenha(!mostrarSenha)}
+                                >
+                                    {mostrarSenha ? "Ocultar" : "Mostrar"}
+                                </button>
                             </div>
                         </div>
 
@@ -34,6 +71,4 @@ const Login = () => {
             </div>
         </main>
     );
-};
-
-export default Login;
+}
