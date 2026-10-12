@@ -1,65 +1,41 @@
-import { useState } from 'react';
+import React from 'react';
+import './Login.css';
 
-export default function Login({ aoLogar }) {
-
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [mostrarSenha, setMostrarSenha] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        /* Garante que os dois estejam informados */
-        if (email && senha) {
-            aoLogar(email);
-        }
-    };
-
+const Login = () => {
     return (
         <main className="login-container">
+            <div className="login-card">
 
-            <section className="login-card">
-                
-                <header className="login-header">
+                {/* Cabeçalho Escuro */}
+                <div className="login-header">
                     <h1>SportHub</h1>
-
-                    <h2>Entre na sua conta</h2>
+                    <h2>Entre na<br/>sua conta</h2>
                     <p>Acompanhe seu time do coração, jogos e competições favoritas em um só lugar.</p>
-                </header>
+                </div>
 
-                <form onSubmit={handleSubmit} className="login-form">
+                {/* Área do Formulário Clara (Foco na Visibilidade) */}
+                <div className="login-form-container">
+                    <form>
+                        <div className="input-group">
+                            <label htmlFor="email">E-mail</label>
+                            <input type="email" id="email" placeholder="Digite seu e-mail" required />
+                        </div>
 
-                    <div className="input-group">
-                        <label htmlFor="email">E-mail:</label>
+                        <div className="input-group">
+                            <label htmlFor="senha">Senha</label>
+                            <div className="password-input-wrapper">
+                                <input type="password" id="senha" placeholder="Digite sua senha" required />
+                                <button type="button" className="show-password">Mostrar</button>
+                            </div>
+                        </div>
 
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="Digite seu e-mail"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
+                        <button type="submit" className="btn-entrar">Entrar</button>
+                    </form>
+                </div>
 
-                    <div className="input-group">
-                        <label htmlFor="senha">Senha:</label>
-
-                        <input
-                            type={mostrarSenha ? "text" : "password"}
-                            id="senha"
-                            placeholder="Digite sua senha"
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            required
-                        />
-                        <button type="button" onClick={() => setMostrarSenha(!mostrarSenha)}>{mostrarSenha ? "Ocultar" : "Mostrar"}</button>
-                    </div>
-
-                    <button type="submit" className="login-button">Entrar</button>
-
-                </form>
-            </section>
+            </div>
         </main>
     );
-}
+};
+
+export default Login;
