@@ -1,20 +1,25 @@
-/* Pag. de estatísticas de determinada partida */
+/* Página de estatísticas da partida */
 .match-page {
-    /* Variáveis */
-    --match-bg: #071525;
-    --match-card: #262c3a;
-    --match-borda: #262c3a;
-    --match-trilho: #e8edf4;
-    --match-texto: #cbcccc;
-    --match-muted: #66768c;
-    --match-azul: #1a67d8;
- 
+    /* Integração com o sistema global de temas */
+    --match-bg: var(--cor-fundo);
+    --match-card: var(--cor-superficie);
+    --match-borda: var(--cor-borda);
+    --match-trilho: var(--cor-superficie-secundaria);
+    --match-texto: var(--cor-texto);
+    --match-muted: var(--cor-texto-secundario);
+    --match-azul: var(--cor-primaria);
+
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
     background-color: var(--match-bg);
     color: var(--match-texto);
     text-align: left;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 .match-main {
@@ -38,16 +43,24 @@
     gap: 20px;
 }
 
-/* Cartão base (usado por estatísticas, onde assistir e local do jogo) */
+/* Cartão base */
 .match-card {
     padding: 20px 24px;
     background: var(--match-card);
     border: 1px solid var(--match-borda);
     border-radius: 12px;
+
+    color: var(--match-texto);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .match-card__titulo {
     margin: 0 0 20px;
+    color: var(--match-texto);
     font-size: 16px;
     font-weight: 700;
 }
@@ -82,8 +95,9 @@
     }
 }
 
-ul {
-  list-style: none; /* Remove os marcadores */
-  padding: 0;       /* Opcional: remove o espaçamento padrão */
-  margin: 0;        /* Opcional: remove a margem padrão */
+/* Remove marcadores das listas dentro da página */
+.match-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

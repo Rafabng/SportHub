@@ -1,4 +1,4 @@
-header {
+.header {
     width: 100%;
     min-height: 68px;
     box-sizing: border-box;
@@ -10,8 +10,8 @@ header {
 
     padding: 0 24px;
 
-    background: #071525;
-    color: #fff;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 .logo-png {
@@ -43,8 +43,8 @@ header {
     margin: 0 auto;
     padding: 0 10px;
 
-    background: #14263c;
-    border: 1px solid #263d57;
+    background: var(--cor-superficie-secundaria);
+    border: 1px solid var(--cor-borda);
     border-radius: 8px;
 
     transition: border-color 0.2s ease;
@@ -61,18 +61,18 @@ header {
     outline: none;
 
     background: transparent;
-    color: #fff;
+    color: var(--cor-texto);
 
     font-family: inherit;
     font-size: 13px;
 }
 
 .search-bar input::placeholder {
-    color: #8291a5;
+    color: var(--cor-texto-secundario);
 }
 
 .search-bar:focus-within {
-    border-color: #8ee63f;
+    border-color: var(--cor-destaque);
 }
 
 .header-actions {
@@ -102,7 +102,7 @@ header {
     border-radius: 8px;
 
     background: transparent;
-    color: #cbd5e1;
+    color: var(--cor-texto-secundario);
 
     cursor: pointer;
 
@@ -111,9 +111,9 @@ header {
         color 0.2s ease;
 }
 
-.notification-button:hover {
-    background: #14263c;
-    color: #fff;
+.notification-button:hover,
+.login-button:hover {
+    background: var(--cor-hover);
 }
 
 .user-button {
@@ -184,13 +184,9 @@ header {
 }
 
 .login-button {
-    border: 1px solid #263d57;
+    border: 1px solid var(--cor-borda);
     background: transparent;
-    color: white;
-}
-
-.login-button:hover {
-    background: #14263c;
+    color: var(--cor-texto);
 }
 
 .register-button {
@@ -204,7 +200,7 @@ header {
 }
 
 @media (max-width: 700px) {
-    header {
+    .header {
         gap: 12px;
         padding: 0 12px;
     }

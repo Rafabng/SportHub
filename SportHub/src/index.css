@@ -5,7 +5,9 @@
 html,
 body,
 #root {
-    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system,
+        Roboto, Arial, sans-serif;
+
     width: 100%;
     min-height: 100%;
     margin: 0;
@@ -13,9 +15,8 @@ body,
 
 body {
     min-width: 320px;
-    min-width: 320px;
-    background-color: #071525;
-    color: white;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 button,
@@ -37,5 +38,4 @@ input {
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
-    color: white;
 }

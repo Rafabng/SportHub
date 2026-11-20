@@ -108,7 +108,9 @@ export default function MatchHeader({ partida, aoVoltar }) {
                 setLinkCopiado(true);
                 setTimeout(() => setLinkCopiado(false), 2000);
             }
-        } catch {}
+        } catch {
+            // o usuário cancelou o compartilhamento: nada a fazer
+        }
     }
 
     return (
