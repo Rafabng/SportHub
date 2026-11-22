@@ -4,6 +4,7 @@ import logoPsg from "../assets/logo-psg.png";
 
 const times = [
     {
+        id: 'real-madrid',
         nome: 'Real Madrid',
         campeonato: 'La Liga',
         estadio: 'Santiago Bernabéu',
@@ -11,6 +12,7 @@ const times = [
     },
 
     {
+        id: 'barcelona',
         nome: 'Barcelona',
         campeonato: 'La Liga',
         estadio: 'Camp Nou',
@@ -18,6 +20,7 @@ const times = [
     },
 
     {
+        id: 'psg',
         nome: 'PSG',
         campeonato: 'Ligue One',
         estadio: 'Parc des Princes',

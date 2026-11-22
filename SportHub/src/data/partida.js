@@ -12,12 +12,14 @@ const partida = {
 
     // Logo (caso não houver, <TeamCrest> utiliza a sigla como escudo)
     casa: {
+        id: time[0].id,
         nome: time[0].nome,
         sigla: "RM",
         cor: "#ffffff",
         logo: time[0].logo
     },
     visitante: {
+        id: time[1].id,
         nome: time[1].nome,
         sigla: "BAR",
         cor: "#9e2f2f",

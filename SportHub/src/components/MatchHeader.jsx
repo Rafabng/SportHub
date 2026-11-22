@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, Share2, Star, Trophy } from "lucide-react";
 import TeamCrest from "./TeamCrest.jsx";
+import { useApp } from "../context/useApp.jsx";
 import "./MatchHeader.css";
 
 function BolaIcone() {
@@ -87,12 +88,17 @@ function formatarDataHora(iso) {
 export default function MatchHeader({ partida, aoVoltar }) {
     const { competicao, casa, visitante, placar, gols, status, dataHora } = partida;
     
-    const [favoritos, setFavoritos] = useState({ partida: false, casa: false, visitante: false });
     const [linkCopiado, setLinkCopiado] = useState(false);
+    const {
+        ehPartidaFavorita,
+        ehTimeFavorito,
+        alternarPartidaFavorita,
+        alternarTimeFavorito
+    } = useApp();
 
-    function alternarFavorito(chave) {
-        setFavoritos((atual) => ({ ...atual, [chave]: !atual[chave] }));
-    }
+    const partidaFavorita = ehPartidaFavorita(partida.id);
+    const casaFavorita = ehTimeFavorito(casa.id);
+    const visitanteFavorito = ehTimeFavorito(visitante.id);
 
     async function compartilhar() {
         const dados = {
@@ -133,11 +139,14 @@ export default function MatchHeader({ partida, aoVoltar }) {
                     <button
                         type="button"
                         className="match-acao"
-                        aria-pressed={favoritos.partida}
-                        onClick={() => alternarFavorito("partida")}
+                        aria-pressed={partidaFavorita}
+                        onClick={() => alternarPartidaFavorita(partida.id)}
                     >
-                        <Star size={16} fill={favoritos.partida ? "currentColor" : "none"} />
-                        Favoritar
+                        <Star
+                            size={16}
+                            fill={partidaFavorita ? "currentColor" : "none"}
+                        />
+                        {partidaFavorita ? "Favoritado" : "Favoritar"}
                     </button>
 
                     <button type="button" className="match-acao" onClick={compartilhar}>
@@ -153,11 +162,11 @@ export default function MatchHeader({ partida, aoVoltar }) {
 
             <div className="match-placar">
                 <div className="match-lado match-lado--casa">
-                    <Time 
+                    <Time
                         time={casa}
                         lado="casa"
-                        favorito={favoritos.casa}
-                        aoFavoritar={() => alternarFavorito("casa")}
+                        favorito={casaFavorita}
+                        aoFavoritar={() => alternarTimeFavorito(casa.id)}
                     />
                     <span className="match-placar__gols">{placar.casa}</span>
                 </div>
@@ -172,11 +181,11 @@ export default function MatchHeader({ partida, aoVoltar }) {
                 <div className="match-lado match-lado--visitante">
                     <span className="match-placar__gols">{placar.visitante}</span>
 
-                    <Time 
+                    <Time
                         time={visitante}
                         lado="visitante"
-                        favorito={favoritos.visitante}
-                        aoFavoritar={() => alternarFavorito("visitante")}
+                        favorito={visitanteFavorito}
+                        aoFavoritar={() => alternarTimeFavorito(visitante.id)}
                     />
                 </div>  
 
