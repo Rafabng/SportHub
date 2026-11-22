@@ -2,8 +2,9 @@ import logo from "../assets/logo-sportshub.png";
 import { Search, Bell } from "lucide-react";
 import "./Header.css";
 import ThemeToggle from "./ThemeToggle";
+import UserMenu from "./UserMenu";
 
-export default function Header({usuario, aoNavegar}) {
+export default function Header({usuario, aoNavegar, aoSair}) {
   return (
     <header className="header">
 
@@ -35,11 +36,7 @@ export default function Header({usuario, aoNavegar}) {
               <Bell size={21} />
             </button>
 
-            <button className="user-button">
-              <div className="user-avatar">
-                R
-              </div>
-            </button>
+            <UserMenu usuario={usuario} aoSair={aoSair} />
           </>
 
           ) : (

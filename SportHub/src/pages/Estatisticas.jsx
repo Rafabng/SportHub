@@ -18,7 +18,7 @@ const ABAS = [
     { id: "noticias", rotulo: "Notícias" },
 ];
 
-export default function Estatisticas({ usuario, aoNavegar, partida = partidaExemplo }) {
+export default function Estatisticas({ usuario, aoNavegar, aoSair, partida = partidaExemplo }) {
 
     const [abaAtiva, setAbaAtiva] = useState("estatisticas");
     const aba = ABAS.find((item) => item.id === abaAtiva);
@@ -33,6 +33,7 @@ export default function Estatisticas({ usuario, aoNavegar, partida = partidaExem
             <Header 
                 usuario={usuario}
                 aoNavegar={aoNavegar}
+                aoSair={aoSair}
             />
             <NavBar />
 
