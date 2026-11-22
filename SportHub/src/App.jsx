@@ -15,12 +15,18 @@ export default function App() {
       setPagina("home");
   }
 
+  function aoSair() {
+      setUsuarioLogado(null);
+      setPagina("home");
+  }
+
   return (
     <>
       {pagina === "home" && (
           <Home
               usuario={usuarioLogado}
               aoNavegar={setPagina}
+              aoSair={aoSair}
           />
       )}
 
@@ -28,6 +34,7 @@ export default function App() {
           <Estatisticas
               usuario={usuarioLogado}
               aoNavegar={setPagina}
+              aoSair={aoSair}
           />
       )}
 

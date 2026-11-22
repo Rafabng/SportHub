@@ -7,6 +7,7 @@ import jogos from "../data/jogos.js";
 import times from "../data/times.js";
 import { agruparPorCampeonato, statusDoJogo } from "../utils/jogo.js";
 import "./Home.css";
+import useFavoritos from "../utils/useFavoritos.js";
 
 const FILTROS = [
     { id: "todos", rotulo: "Todos" },
@@ -20,7 +21,7 @@ const PAGINAS_DO_MENU = {
     inicio: "home",
 };
 
-export default function Home({ usuario, aoNavegar }) {
+export default function Home({ usuario, aoNavegar, aoSair }) {
     const [filtro, setFiltro] = useState("todos");
 
     const jogosVisiveis = filtro === "todos"
@@ -30,8 +31,11 @@ export default function Home({ usuario, aoNavegar }) {
     const grupos = agruparPorCampeonato(jogosVisiveis);
     const totalAoVivo = jogos.filter((jogo) => statusDoJogo(jogo) === "aovivo").length;
 
-    // "Seguindo" só aparece com usuário logado (por enquanto usa os times de times.js)
-    const seguindo = usuario ? times.map((time) => ({ nome: time.nome, escudo: time.logo })) : [];
+    const { favoritos } = useFavoritos(usuario);
+    
+    const seguindo = times
+    .filter((time) => favoritos.includes(time.id))
+    .map((time) => ({ nome: time.nome, escudo: time.logo }));
 
     function aoSelecionarMenu(id) {
         const pagina = PAGINAS_DO_MENU[id];
@@ -40,7 +44,7 @@ export default function Home({ usuario, aoNavegar }) {
 
     return (
         <>
-            <Header usuario={usuario} aoNavegar={aoNavegar} />
+            <Header usuario={usuario} aoNavegar={aoNavegar} aoSair={aoSair} />
             <NavBar />
 
             <div className="home__layout">
