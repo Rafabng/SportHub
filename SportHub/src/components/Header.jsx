@@ -1,6 +1,7 @@
 import logo from "../assets/logo-sportshub.png";
 import { Search, Bell } from "lucide-react";
 import "./Header.css";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header({usuario, aoNavegar}) {
   return (
@@ -26,6 +27,8 @@ export default function Header({usuario, aoNavegar}) {
       </div>
 
       <div className="header-actions">
+        <ThemeToggle />
+
         {usuario ? (
           <>
             <button className="notification-button">

@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--match-texto);
     font-size: 14px;
     font-weight: 600;
 }
@@ -70,18 +71,21 @@
     align-items: center;
     gap: 8px;
     padding: 8px 14px;
-    border: 1px solid #d3dbe8;
+    border: 1px solid var(--match-borda);
     border-radius: 8px;
     background: var(--match-card);
     color: var(--match-texto);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
 }
 
 .match-acao:hover {
-    background: #eef3fa;
+    background: var(--cor-hover);
 }
 
 .match-acao[aria-pressed="true"] {
@@ -102,10 +106,13 @@
     background: none;
     color: var(--match-muted);
     cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 .match-icone-btn:hover {
-    background: #e6edf7;
+    background: var(--cor-hover);
     color: var(--match-texto);
 }
 
@@ -120,7 +127,7 @@
     outline-offset: 2px;
 }
 
-/* Placar: [time + gols] [status] [gols + time] e, abaixo, os marcadores */
+/* Placar */
 .match-placar {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -145,6 +152,7 @@
 }
 
 .match-placar__gols {
+    color: var(--match-texto);
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 700;
     line-height: 1;
@@ -165,6 +173,7 @@
 
 .match-time__nome {
     margin: 0;
+    color: var(--match-texto);
     font-size: 18px;
     font-weight: 700;
     text-align: center;
@@ -187,6 +196,7 @@
 }
 
 .match-status__situacao {
+    color: var(--match-texto);
     font-size: 14px;
     font-weight: 600;
 }

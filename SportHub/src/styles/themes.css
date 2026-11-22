@@ -1,0 +1,54 @@
+:root,
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --cor-fundo: #071525;
+    --cor-superficie: #0D2035;
+    --cor-superficie-secundaria: #14263C;
+
+    --cor-texto: #FFFFFF;
+    --cor-texto-secundario: #A0AEC0;
+
+    --cor-borda: #263D57;
+    --cor-hover: #1B324B;
+
+    --cor-primaria: #1769E0;
+    --cor-destaque: #8EE63F;
+
+    /* adicionadas (vinham do variables.css) */
+    --cor-ao-vivo: #FF5A5F;
+    --cor-primaria-suave: rgba(23, 105, 224, 0.25);
+    --cor-texto-claro: #FFFFFF;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --cor-fundo: #F1F3F5;
+    --cor-superficie: #FFFFFF;
+    --cor-superficie-secundaria: #E9EDF2;
+
+    --cor-texto: #20242A;
+    --cor-texto-secundario: #68717C;
+    
+    --cor-borda: #D9DEE5;
+    --cor-hover: #EDF0F5;
+
+    --cor-primaria: #1769E0;
+    --cor-destaque: #4D9B18;
+
+    /* adicionadas (vinham do variables.css) */
+    --cor-ao-vivo: #E5383B;
+    --cor-primaria-suave: rgba(23, 105, 224, 0.12);
+    --cor-texto-claro: #FFFFFF;
+}
+
+body,
+header,
+button,
+input {
+    transition: 
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}

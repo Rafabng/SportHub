@@ -1,52 +1,85 @@
-import NavBar from "../components/NavBar.jsx";
+import { useState } from "react";
 import Header from "../components/Header.jsx";
-import GameCardBig from "../components/GameCardBig.jsx";
+import NavBar from "../components/NavBar.jsx";
+import Menu from "../components/Menu.jsx";
+import Carrossel from "../components/Carrossel.jsx";
 import jogos from "../data/jogos.js";
+import times from "../data/times.js";
+import { agruparPorCampeonato, statusDoJogo } from "../utils/jogo.js";
 import "./Home.css";
-import GameCardSmall from "../components/GameCardSmall.jsx";
 
+const FILTROS = [
+    { id: "todos", rotulo: "Todos" },
+    { id: "aovivo", rotulo: "Ao vivo" },
+    { id: "agendado", rotulo: "Próximos" },
+    { id: "finalizado", rotulo: "Finalizados" },
+];
+
+// Itens do menu que já têm página no App.jsx (os outros ainda não existem)
+const PAGINAS_DO_MENU = {
+    inicio: "home",
+};
 
 export default function Home({ usuario, aoNavegar }) {
+    const [filtro, setFiltro] = useState("todos");
+
+    const jogosVisiveis = filtro === "todos"
+        ? jogos
+        : jogos.filter((jogo) => statusDoJogo(jogo) === filtro);
+
+    const grupos = agruparPorCampeonato(jogosVisiveis);
+    const totalAoVivo = jogos.filter((jogo) => statusDoJogo(jogo) === "aovivo").length;
+
+    // "Seguindo" só aparece com usuário logado (por enquanto usa os times de times.js)
+    const seguindo = usuario ? times.map((time) => ({ nome: time.nome, escudo: time.logo })) : [];
+
+    function aoSelecionarMenu(id) {
+        const pagina = PAGINAS_DO_MENU[id];
+        if (pagina) aoNavegar(pagina);
+    }
 
     return (
         <>
-            <Header 
-                usuario={usuario}
-                aoNavegar={aoNavegar}
-            />
+            <Header usuario={usuario} aoNavegar={aoNavegar} />
             <NavBar />
 
-            <div className="titulo-ao-vivo">
-                <h2>
-                    <span className="indicador-ao-vivo"></span>
-                    Jogos ao Vivo -
-                    <span>4</span>
-                </h2>
+            <div className="home__layout">
+                <Menu
+                    ativo="inicio"
+                    badges={{ partidas: totalAoVivo }}
+                    seguindo={seguindo}
+                    aoSelecionar={aoSelecionarMenu}
+                />
 
-                <a href="/jogos-ao-vivo">Ver todos →</a>
-            </div>
+                <main className="home__conteudo">
+                    <div className="home__filtros">
+                        {FILTROS.map((item) => (
+                            <button
+                                key={item.id}
+                                type="button"
+                                className="home__filtro"
+                                aria-pressed={filtro === item.id}
+                                onClick={() => setFiltro(item.id)}
+                            >
+                                {item.rotulo}
+                            </button>
+                        ))}
+                    </div>
 
-            <GameCardBig 
-                jogo={jogos[0]}
-                aoNavegar={aoNavegar}
-            />
-            <div className="games-grid">
-                <GameCardSmall 
-                    jogo={jogos[1]}
-                    aoNavegar={aoNavegar}
-                />
-                <GameCardSmall 
-                    jogo={jogos[2]}
-                    aoNavegar={aoNavegar}
-                />
-                <GameCardSmall 
-                    jogo={jogos[2]}
-                    aoNavegar={aoNavegar}
-                />
-                <GameCardSmall 
-                    jogo={jogos[1]}
-                    aoNavegar={aoNavegar}
-                />
+                    {grupos.length === 0 && (
+                        <p className="home__vazio">Nenhum jogo nesta categoria agora. Tente outro filtro.</p>
+                    )}
+
+                    {grupos.map((grupo) => (
+                        <Carrossel
+                            key={grupo.campeonato.id}
+                            titulo={grupo.campeonato.nome}
+                            logo={grupo.campeonato.logo}
+                            jogos={grupo.jogos}
+                            aoNavegar={aoNavegar}
+                        />
+                    ))}
+                </main>
             </div>
         </>
     );

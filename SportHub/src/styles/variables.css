@@ -1,0 +1,13 @@
+/* Carregado uma vez no main.jsx */
+:root {
+  --bg: #071525;
+  --panel: #0d1a2d;
+  --card: #262c3a;
+  --line: #3a4558;
+  --text: #eef2f9;
+  --muted: #9aa6bb;
+  --accent: #4c8dff;
+  --soft: #162a4a;
+  --live: #ff5a5f;
+}
+
