@@ -2,45 +2,56 @@ import { useState } from 'react';
 import './App.css';
 
 import Login from "./pages/Login.jsx";
+import Cadastro from "./pages/Cadastro.jsx";
 import Estatisticas from "./pages/Estatisticas.jsx";
 import Home from "./pages/Home.jsx";
 
 export default function App() {
 
-  const [usuarioLogado, setUsuarioLogado] = useState(null);
-  const [pagina, setPagina] = useState("home");
+    const [usuarioLogado, setUsuarioLogado] = useState(null);
+    const [pagina, setPagina] = useState("home");
 
-  function aoLogar(email) {
-      setUsuarioLogado({ email });
-      setPagina("home");
-  }
+    function aoLogar(email) {
+        setUsuarioLogado({ email });
+        setPagina("home");
+    }
 
-  function aoSair() {
-      setUsuarioLogado(null);
-      setPagina("home");
-  }
+    function aoSair() {
+        setUsuarioLogado(null);
+        setPagina("home");
+    }
 
-  return (
-    <>
-      {pagina === "home" && (
-          <Home
-              usuario={usuarioLogado}
-              aoNavegar={setPagina}
-              aoSair={aoSair}
-          />
-      )}
+    return (
+        <>
+            {pagina === "home" && (
+                <Home
+                    usuario={usuarioLogado}
+                    aoNavegar={setPagina}
+                    aoSair={aoSair}
+                />
+            )}
 
-      {pagina === "estatisticas" && (
-          <Estatisticas
-              usuario={usuarioLogado}
-              aoNavegar={setPagina}
-              aoSair={aoSair}
-          />
-      )}
+            {pagina === "estatisticas" && (
+                <Estatisticas
+                    usuario={usuarioLogado}
+                    aoNavegar={setPagina}
+                    aoSair={aoSair}
+                />
+            )}
 
-      {pagina === "login" && (
-          <Login aoLogar={aoLogar} />
-      )}
-    </>
-  );
+            {pagina === "login" && (
+                <Login
+                    aoLogar={aoLogar}
+                    aoNavegar={setPagina}
+                />
+            )}
+
+            {pagina === "cadastro" && (
+                <Cadastro
+                    aoLogar={aoLogar}
+                    aoNavegar={setPagina}
+                />
+            )}
+        </>
+    );
 }

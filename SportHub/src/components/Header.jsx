@@ -50,7 +50,7 @@ export default function Header({usuario, aoNavegar, aoSair}) {
 
               <button
                   className="register-button"
-                  onClick={() => aoNavegar("login")}
+                  onClick={() => aoNavegar("cadastro")}
               >
                   Cadastrar
               </button>

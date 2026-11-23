@@ -1,0 +1,97 @@
+.cadastro-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-main);
+    padding: 20px;
+}
+
+.cadastro-card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-card-dark);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-header {
+    padding: 20px 30px 20px 30px;
+    text-align: center;
+}
+
+.cadastro-header h2 {
+    color: var(--text-white);
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+
+.cadastro-header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cadastro-form-container {
+    background: var(--bg-form-light);
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+.erro-aviso {
+    font-size: 13px;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 0 0 14px 0;
+}
+
+.btn-cadastrar {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    background: var(--accent-blue);
+    color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background: var(--accent-hover);
+}
+
+.cadastro-footer {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.link-login {
+    background: transparent;
+    border: none;
+    color: var(--accent-blue);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}
