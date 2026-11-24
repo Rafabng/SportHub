@@ -12,13 +12,6 @@ function BandeiraBrasil() {
   );
 }
 
-/**
- * Props:
- *  - usuario          { email, nome? } do App.jsx
- *  - aoSair           desloga o usuário (vem do App.jsx)
- *  - aoIdioma         (opcional) clique em "Idioma"
- *  - aoConfiguracoes  (opcional) clique em "Configurações"
- */
 export default function UserMenu({ usuario, aoSair, aoIdioma, aoConfiguracoes }) {
   const [aberto, setAberto] = useState(false);
   const raiz = useRef(null);
@@ -27,7 +20,6 @@ export default function UserMenu({ usuario, aoSair, aoIdioma, aoConfiguracoes })
   const nome = usuario.nome ?? usuario.email;
   const inicial = nome.charAt(0).toUpperCase();
 
-  // Fecha ao clicar fora ou apertar Esc; ao abrir, foca no primeiro item
   useEffect(() => {
     if (!aberto) return;
 
@@ -51,7 +43,6 @@ export default function UserMenu({ usuario, aoSair, aoIdioma, aoConfiguracoes })
     };
   }, [aberto]);
 
-  // Setas ↑ ↓ percorrem os itens
   function navegarPeloTeclado(evento) {
     if (evento.key !== "ArrowDown" && evento.key !== "ArrowUp") return;
     evento.preventDefault();

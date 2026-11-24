@@ -49,9 +49,9 @@ export default function MatchTabs({ abas, abaAtiva, aoSelecionar }) {
                         tabIndex={ativa ? 0 : -1}
                         onClick={() => aoSelecionar(aba.id)}
                     >
-                        {aba.rotulo}    
+                        {aba.rotulo}
                     </button>
-                );                
+                );
             })}
         </div>
     );

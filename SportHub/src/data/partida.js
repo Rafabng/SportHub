@@ -1,4 +1,3 @@
-/* Dados de exemplo da tela de estatísticas */
 import time from "./times.js";
 
 const partida = {
@@ -10,7 +9,6 @@ const partida = {
     status: "73:28",
     dataHora: "2026-09-02T21:30:00-03:00",
 
-    // Logo (caso não houver, <TeamCrest> utiliza a sigla como escudo)
     casa: {
         id: time[0].id,
         nome: time[0].nome,
@@ -36,7 +34,7 @@ const partida = {
                 minuto: 12
             },
             {
-                jogador: "Valverde", 
+                jogador: "Valverde",
                 minuto: 73
             }
         ],
@@ -47,7 +45,7 @@ const partida = {
             }
         ]
     },
-    /* Estatísticas ('destaque: true' desenha a barra dividida, para posse de bola) */
+
     estatisticas: [
         {
             id: "posse",

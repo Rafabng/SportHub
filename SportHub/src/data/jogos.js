@@ -84,13 +84,13 @@ const jogos = [
 
     {
         id: 7,
-        timeCasa: buscarTime('flamengo'),
+        timeCasa: buscarTime('vasco'),
         timeVisitante: buscarTime('palmeiras'),
         horario: '21:30',
         campeonato: campeonato[1],
-        estadio: buscarTime('flamengo').estadio,
+        estadio: buscarTime('vasco').estadio,
         placarCasa: 2,
-        placarVisitante: 2,
+        placarVisitante: 1,
         situacao: 'Ao Vivo',
         minuto: "81:45"
     },
@@ -137,7 +137,7 @@ const jogos = [
     {
         id: 11,
         timeCasa: buscarTime('botafogo'),
-        timeVisitante: buscarTime('fluminense'),
+        timeVisitante: buscarTime('flamengo'),
         horario: '20:00',
         campeonato: campeonato[1],
         estadio: buscarTime('botafogo').estadio,

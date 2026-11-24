@@ -17,14 +17,14 @@ export default function ThemeToggle() {
                 tema === "dark" ? "Ativar modo claro" : "Ativar modo escuro"
             }
         >
-            <Moon 
+            <Moon
                 size={20}
                 className={`theme-toggle-icon ${
                     tema === "dark" ? "visible" : ""
                 }`}
             />
 
-            <Sun 
+            <Sun
                 size={20}
                 className={`theme-toggle-icon ${
                     tema === "light" ? "visible" : ""

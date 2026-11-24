@@ -3,7 +3,7 @@ export default function TeamCrest({ time, tamanho = 64 }) {
 
     if (time.logo) {
         return (
-            <img 
+            <img
                 className="match-crest"
                 src={time.logo}
                 alt=""
@@ -14,7 +14,7 @@ export default function TeamCrest({ time, tamanho = 64 }) {
     }
 
     return (
-        <svg 
+        <svg
             className="match-crest"
             viewBox="0 0 64 72"
             width={tamanho}
@@ -22,7 +22,7 @@ export default function TeamCrest({ time, tamanho = 64 }) {
             aria-hidden="true"
             focusable="false"
         >
-            <path 
+            <path
                 d="M32 2 6 10v24c0 17 11 29 26 36 15-7 26-19 26-36V10L32 2Z"
                 fill={time.cor}
                 stroke="rgba(0,0,0,.18)"
@@ -42,6 +42,6 @@ export default function TeamCrest({ time, tamanho = 64 }) {
         </svg>
     )
 
-} 
+}
 
 

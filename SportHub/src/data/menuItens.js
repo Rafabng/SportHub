@@ -1,4 +1,3 @@
-// "grupo" mostra um título antes do item; "mobile: false" esconde o item na barra inferior
 export const ITENS_PADRAO = [
   { id: "inicio", rotulo: "Início", icone: "home" },
   { id: "partidas", rotulo: "Partidas", icone: "ball", grupo: "Acompanhar" },

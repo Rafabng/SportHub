@@ -2,14 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import GameCard from "./GameCard.jsx";
 import "./Carrossel.css";
 
-/**
- * Props:
- *  - titulo       nome do campeonato
- *  - logo         (opcional) logo do campeonato, mostrada à esquerda do nome
- *  - jogos        lista de jogos (itens de data/jogos.js) desse campeonato
- *  - aoNavegar    repassada para cada <GameCard />
- *  - aoVerTabela  (opcional) mostra o link "Ver tabela"
- */
 export default function Carrossel({ titulo, logo, jogos = [], aoNavegar, aoVerTabela }) {
   const trilho = useRef(null);
   const [podeVoltar, setPodeVoltar] = useState(false);
@@ -22,8 +14,6 @@ export default function Carrossel({ titulo, logo, jogos = [], aoNavegar, aoVerTa
     setPodeAvancar(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
   }, []);
 
-  // O ResizeObserver avisa quando o trilho ou os cards mudam de tamanho
-  // (inclusive na primeira renderização), então as setas ficam sempre corretas.
   useEffect(() => {
     const el = trilho.current;
     if (!el) return;

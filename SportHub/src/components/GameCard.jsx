@@ -1,22 +1,6 @@
 import { statusDoJogo } from "../utils/jogo.js";
 import "./GameCard.css";
 
-function Escudo({ time }) {
-  if (time.logo) {
-    return <img className="game-card__escudo" src={time.logo} alt="" />;
-  }
-  return (
-    <span className="game-card__escudo game-card__escudo--sigla">
-      {time.nome.slice(0, 3).toUpperCase()}
-    </span>
-  );
-}
-
-/**
- * Props (mesmas do antigo GameCardSmall):
- *  - jogo        item de data/jogos.js
- *  - aoNavegar   função de navegação do App (vai para "estatisticas")
- */
 export default function GameCard({ jogo, aoNavegar }) {
   const status = statusDoJogo(jogo);
   const aoVivo = status === "aovivo";
@@ -41,7 +25,7 @@ export default function GameCard({ jogo, aoNavegar }) {
 
       <span className="game-card__corpo">
         <span className="game-card__time">
-          <Escudo time={jogo.timeCasa} />
+          <img className="game-card__escudo" src={jogo.timeCasa.logo} alt="" />
           {jogo.timeCasa.nome}
         </span>
         <span className="game-card__placar">
@@ -49,7 +33,7 @@ export default function GameCard({ jogo, aoNavegar }) {
           <small className={aoVivo ? "game-card__legenda--aovivo" : ""}>{legenda}</small>
         </span>
         <span className="game-card__time">
-          <Escudo time={jogo.timeVisitante} />
+          <img className="game-card__escudo" src={jogo.timeVisitante.logo} alt="" />
           {jogo.timeVisitante.nome}
         </span>
       </span>

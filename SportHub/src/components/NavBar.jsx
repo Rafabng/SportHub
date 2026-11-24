@@ -3,7 +3,7 @@ function NavBar() {
 
   return (
     <nav className="navbar">
-        <a href="/">☰ Todos</a>
+        <a href="">☰ Todos</a>
         <a href="/futebol">⚽ Futebol</a>
         <a href="/basquete">🏀 Basquete</a>
         <a href="/tenis">🎾 Tênis</a>

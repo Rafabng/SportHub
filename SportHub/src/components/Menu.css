@@ -1,6 +1,6 @@
 .menu {
   position: sticky;
-  top: 20px; /* Header e NavBar não são fixos; se virarem, some a altura deles aqui */
+  top: 20px;
   align-self: start;
   display: flex;
   flex-direction: column;
@@ -8,9 +8,15 @@
   padding-left: 10px;
   transition: width 0.2s;
 }
-.menu--mini { width: 68px; }
+.menu--mini {
+  width: 68px;
+}
 
-.menu__lista { display: flex; flex-direction: column; gap: 2px; }
+.menu__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 
 .menu__grupo {
   margin: 16px 12px 6px;
@@ -36,16 +42,26 @@
   white-space: nowrap;
   cursor: pointer;
 }
-.menu__item:hover { background: var(--cor-hover); color: var(--cor-texto); }
+.menu__item:hover {
+  background: var(--cor-hover);
+  color: var(--cor-texto);
+}
+
 .menu__item:focus-visible,
-.menu__recolher:focus-visible { outline: 2px solid var(--cor-destaque); outline-offset: 2px; }
+.menu__recolher:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
 
 .menu__item--ativo {
   color: var(--cor-texto);
   font-weight: 600;
   background: linear-gradient(90deg, var(--cor-primaria-suave), transparent);
 }
-.menu__item--ativo .menu__icone { color: var(--cor-primaria); }
+.menu__item--ativo .menu__icone {
+  color: var(--cor-primaria);
+}
+
 .menu__item--ativo::before {
   content: "";
   position: absolute;
@@ -109,7 +125,7 @@
 }
 .menu__seta { width: 18px; height: 18px; stroke-width: 2; transition: transform 0.2s; }
 
-/* Modo recolhido (só ícones) */
+/* === Menu Recolhido mostra só os emblemas === */
 .menu--mini .menu__seta { transform: rotate(180deg); }
 .menu--mini .menu__rotulo,
 .menu--mini .menu__grupo,
@@ -117,7 +133,7 @@
 .menu--mini .menu__seguindo-bloco { display: none; }
 .menu--mini .menu__item { justify-content: center; padding: 10px; }
 
-/* Celular: vira barra inferior */
+/* ==== No celular o menu vira barra inferior ====*/
 @media (max-width: 860px) {
   .menu,
   .menu--mini {

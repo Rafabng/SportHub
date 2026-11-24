@@ -7,7 +7,9 @@
     padding: 20px;
 }
 
-.home__conteudo { min-width: 0; }
+.home__conteudo {
+    min-width: 0;
+}
 
 .home__filtros {
     display: flex;
@@ -40,7 +42,7 @@
     text-align: center;
 }
 
-/* No celular o Menu vira barra fixa embaixo: sai da grade e reserva espaço no fim da página */
+/* === No celular o Menu vira barra fixa embaixo === */
 @media (max-width: 860px) {
     .home__layout {
         grid-template-columns: 1fr;

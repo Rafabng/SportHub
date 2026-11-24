@@ -21,14 +21,6 @@ function Icone({ nome }) {
   );
 }
 
-/**
- * Props:
- *  - itens        lista de itens (padrão: ITENS_PADRAO)
- *  - ativo        id do item ativo (opcional; se omitido o menu controla sozinho)
- *  - aoSelecionar função chamada com o id do item clicado
- *  - badges       ex.: { partidas: 4 } mostra o contador vermelho no item
- *  - seguindo     ex.: [{ nome: "Barcelona", escudo: logoBarcelona }] (ou { sigla, cor } sem escudo)
- */
 export default function Menu({
   itens = ITENS_PADRAO,
   ativo,

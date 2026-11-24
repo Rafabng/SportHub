@@ -1,11 +1,11 @@
-// Converte o texto de "situacao" do jogos.js em um status interno
+
 export function statusDoJogo(jogo) {
   if (jogo.situacao === "Ao Vivo") return "aovivo";
   if (jogo.situacao === "Finalizado") return "finalizado";
   return "agendado";
 }
 
-// Agrupa os jogos por campeonato.nome mantendo a ordem em que aparecem
+/* === Agrupa os gamecards para utilizar no carrossel ===*/
 export function agruparPorCampeonato(jogos) {
   const grupos = new Map();
   jogos.forEach((jogo) => {

@@ -2,7 +2,6 @@ import logoBrasileirao from "../assets/logo-brasileirao.png";
 import logoLaliga from "../assets/logo-la-liga.png";
 import logoChampions from "../assets/logo-champions.png";
 
-
 const campeonatos = [
     {
         id: 1,

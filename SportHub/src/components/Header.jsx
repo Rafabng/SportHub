@@ -1,10 +1,16 @@
 import logo from "../assets/logo-sportshub.png";
+import logo_modo_claro from "../assets/logo-sportshub-modo-claro.png";
+import { useApp } from "../context/useApp.jsx";
 import { Search, Bell } from "lucide-react";
 import "./Header.css";
 import ThemeToggle from "./ThemeToggle";
 import UserMenu from "./UserMenu";
 
 export default function Header({usuario, aoNavegar, aoSair}) {
+
+  const { tema } = useApp();
+  const logoAtual = tema === "light" ? logo_modo_claro : logo;
+
   return (
     <header className="header">
 
@@ -14,7 +20,7 @@ export default function Header({usuario, aoNavegar, aoSair}) {
             onClick={() => aoNavegar("home")}
             aria-label="Voltar para a página inicial"
         >
-            <img src={logo} alt="SportHub" className="logo-png" />
+            <img src={logoAtual} alt="SportHub" className="logo-png" />
         </button>
     </div>
 

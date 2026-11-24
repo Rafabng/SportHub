@@ -16,7 +16,6 @@ const FILTROS = [
     { id: "finalizado", rotulo: "Finalizados" },
 ];
 
-// Itens do menu que já têm página no App.jsx (os outros ainda não existem)
 const PAGINAS_DO_MENU = {
     inicio: "home",
 };

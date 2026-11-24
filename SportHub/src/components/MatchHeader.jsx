@@ -6,7 +6,7 @@ import "./MatchHeader.css";
 
 function BolaIcone() {
     return (
-        <svg 
+        <svg
             className="match-gol__bola"
             viewBox="0 0 16 16"
             width="14"
@@ -16,7 +16,7 @@ function BolaIcone() {
             strokeWidth="1.2"
             aria-hidden="true"
             focusable="false"
-        >   
+        >
             <circle cx="8" cy="8" r="6.8" />
             <path d="m8 5 2.6 1.9-1 3H6.4l-1-3L8 5Z" fill="currentColor" />
             <path d="M8 5V1.4M10.6 6.9l3.3-1.1M9.6 9.9l2 2.8M6.4 9.9l-2 2.8M5.4 6.9 2.1 5.8" />
@@ -51,7 +51,7 @@ function Time({ time, lado, favorito, aoFavoritar }) {
             className="match-icone-btn"
             aria-pressed={favorito}
             aria-label={`Favoritar ${time.nome}`}
-            onClick={aoFavoritar} 
+            onClick={aoFavoritar}
         >
             <Star size={16} fill={favorito ? "currentColor" : "none"} />
         </button>
@@ -85,7 +85,7 @@ function formatarDataHora(iso) {
     return `${dia} · ${hora}`;
 }
 
-export default function MatchHeader({ partida, aoVoltar }) {
+export default function MatchHeader({ partida, usuario, aoVoltar, aoExigirLogin }) {
     const { competicao, casa, visitante, placar, gols, status, dataHora } = partida;
     
     const [linkCopiado, setLinkCopiado] = useState(false);
@@ -96,9 +96,17 @@ export default function MatchHeader({ partida, aoVoltar }) {
         alternarTimeFavorito
     } = useApp();
 
-    const partidaFavorita = ehPartidaFavorita(partida.id);
-    const casaFavorita = ehTimeFavorito(casa.id);
-    const visitanteFavorito = ehTimeFavorito(visitante.id);
+    function exigirLogin(acao) {
+        if (!usuario) {
+            aoExigirLogin?.();
+            return;
+        }
+        acao();
+    }
+
+    const partidaFavorita = Boolean(usuario) && ehPartidaFavorita(partida.id);
+    const casaFavorita = Boolean(usuario) && ehTimeFavorito(casa.id);
+    const visitanteFavorito = Boolean(usuario) && ehTimeFavorito(visitante.id);
 
     async function compartilhar() {
         const dados = {
@@ -115,7 +123,7 @@ export default function MatchHeader({ partida, aoVoltar }) {
                 setTimeout(() => setLinkCopiado(false), 2000);
             }
         } catch {
-            // o usuário cancelou o compartilhamento: nada a fazer
+
         }
     }
 
@@ -140,7 +148,7 @@ export default function MatchHeader({ partida, aoVoltar }) {
                         type="button"
                         className="match-acao"
                         aria-pressed={partidaFavorita}
-                        onClick={() => alternarPartidaFavorita(partida.id)}
+                        onClick={() => exigirLogin(() => alternarPartidaFavorita(partida.id))}
                     >
                         <Star
                             size={16}
@@ -166,7 +174,7 @@ export default function MatchHeader({ partida, aoVoltar }) {
                         time={casa}
                         lado="casa"
                         favorito={casaFavorita}
-                        aoFavoritar={() => alternarTimeFavorito(casa.id)}
+                        aoFavoritar={() => exigirLogin(() => alternarTimeFavorito(casa.id))}
                     />
                     <span className="match-placar__gols">{placar.casa}</span>
                 </div>
@@ -185,9 +193,9 @@ export default function MatchHeader({ partida, aoVoltar }) {
                         time={visitante}
                         lado="visitante"
                         favorito={visitanteFavorito}
-                        aoFavoritar={() => alternarTimeFavorito(visitante.id)}
+                        aoFavoritar={() => exigirLogin(() => alternarTimeFavorito(visitante.id))}
                     />
-                </div>  
+                </div>
 
                 <ListaGols gols={gols.casa} lado="casa" />
                 <ListaGols gols={gols.visitante} lado="visitante" />

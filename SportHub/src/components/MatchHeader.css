@@ -196,10 +196,13 @@
 }
 
 .match-status__situacao {
-    color: var(--match-texto);
+    color: #FF5A5F;
     font-size: 14px;
     font-weight: 600;
+    animation: match-pulso 1.6s infinite;
 }
+
+@keyframes match-pulso { 50% { opacity: 0.60; } }
 
 .match-status__data {
     color: var(--match-muted);

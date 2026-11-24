@@ -1,0 +1,52 @@
+.aviso-login {
+    position: fixed;
+    left: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    z-index: 100;
+
+    width: min(380px, calc(100vw - 40px));
+    padding: 22px 52px 22px 26px;
+    border-radius: 24px;
+
+    background: var(--cor-aviso-erro);
+    color: var(--cor-texto-claro);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+    animation: aviso-login-entrada 0.25s ease-out;
+}
+
+@keyframes aviso-login-entrada {
+    from { opacity: 0; transform: translateX(-16px); }
+    to { opacity: 1; transform: none; }
+}
+
+.aviso-login__texto {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.aviso-login__fechar {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.aviso-login__fechar:hover { background: rgba(0, 0, 0, 0.18); }
+.aviso-login__fechar:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .aviso-login { animation: none; }
+}

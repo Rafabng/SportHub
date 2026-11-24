@@ -21,16 +21,16 @@ export default function StatRow({nome, casa = 0, visitante = 0, nomeCasa, nomeVi
             <div className="stat__linha" aria-hidden="true">
                 <strong className="stat__valor">{valorCasa}{unidade}</strong>
                 <span className="stat__nome">{nome}</span>
-                <strong className="stat__valor stat__valor--visitante">{valorVisitante}{unidade}</strong>                
+                <strong className="stat__valor stat__valor--visitante">{valorVisitante}{unidade}</strong>
             </div>
 
             {destaque ? (
                 <div className="stat__divisao" aria-hidden="true">
-                    <span 
+                    <span
                         className="stat__preenchimento stat__preenchimento--casa"
                         style={{ flexBasis: `${divisaoCasa}%` }}
                     />
-                    <span 
+                    <span
                         className="stat__preenchimento stat__preenchimento--visitante"
                         style={{ flexBasis: `${100 - divisaoCasa}%` }}
                     />
@@ -38,13 +38,13 @@ export default function StatRow({nome, casa = 0, visitante = 0, nomeCasa, nomeVi
             ) : (
                 <div className="stat__barras" aria-hidden="true">
                     <span className="stat__trilho stat__trilho--casa">
-                        <span 
+                        <span
                             className="stat__preenchimento stat__preenchimento--casa"
                             style={{ width: `${larguraCasa}%` }}
                         />
                     </span>
                     <span className="stat__trilho">
-                        <span 
+                        <span
                             className="stat__preenchimento stat__preenchimento--visitante"
                             style={{ width: `${larguraVisitante}%` }}
                         />
@@ -52,5 +52,5 @@ export default function StatRow({nome, casa = 0, visitante = 0, nomeCasa, nomeVi
                 </div>
             )}
         </li>
-    );      
+    );
 }

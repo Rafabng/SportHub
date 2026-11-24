@@ -189,6 +189,7 @@
 .match-status__situacao {
     font-size: 14px;
     font-weight: 600;
+    color: var(--match-texto);
 }
 
 .match-status__data {
