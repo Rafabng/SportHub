@@ -2,11 +2,14 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/logo-navegador.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SportHub: acompanhe jogos ao vivo, resultados, tabelas e estatísticas de futebol e outros esportes em um só lugar."
+    />
 
-    <!-- === Antes de carregar os elementos, o sistema já busca qual o tema armazenado no LocalStorage === -->
-
+    <!-- Aplica o tema salvo ANTES da primeira pintura, para não piscar o escuro ao recarregar -->
     <script>
       (function () {
         try {
@@ -15,13 +18,17 @@
         } catch (e) {}
       })();
     </script>
-
     <style>
+      /* mesmas cores de --cor-fundo (themes.css); cobrem o instante antes do CSS carregar */
       html { background: #071525; }
       html[data-theme="light"] { background: #F1F3F5; }
     </style>
 
-    <title>SportHub</title>
+    <!-- Logo do Header (elemento do LCP): começa a baixar já no HTML, com prioridade alta.
+         O arquivo precisa estar em public/ para ter um endereço fixo. -->
+    <link rel="preload" as="image" href="/logo-sportshub.png" fetchpriority="high" />
+
+    <title>sporthub</title>
   </head>
   <body>
     <div id="root"></div>

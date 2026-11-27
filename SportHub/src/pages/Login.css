@@ -8,6 +8,8 @@
     --border-light: #cbd5e1;
     --accent-blue: #1769ff;
     --accent-hover: #0d56d8;
+    --accent-blue-texto: #0f5bd6; /* azul para TEXTO sobre fundo claro (contraste 5,7:1) */
+    --text-placeholder: #5b6b82;  /* cinza legível sobre branco e sobre #f8fafc (contraste 5,2:1) */
 }
 
 * {
@@ -101,7 +103,8 @@
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    padding: 0;
+    min-height: 24px;
+    padding: 4px 2px;
 }
 
 .link-esqueci-senha:hover {
@@ -121,7 +124,7 @@
 }
 
 .input-group input::placeholder {
-    color: #94a3b8;
+    color: var(--text-placeholder);
 }
 
 .input-group input:focus {
@@ -130,25 +133,49 @@
     box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.15);
 }
 
+/* A borda e o fundo ficam no wrapper; o input e o botão "Mostrar" são vizinhos,
+   sem um por cima do outro (o Lighthouse exige alvos de toque sem sobreposição). */
 .password-input-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
+    background: #f8fafc;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
-.password-input-wrapper input {
-    padding-right: 80px;
+.password-input-wrapper:focus-within {
+    border-color: var(--accent-blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.15);
+}
+
+.password-input-wrapper input,
+.password-input-wrapper input:focus {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    box-shadow: none;
 }
 
 .show-password {
-    position: absolute;
-    right: 12px;
+    flex: none;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 14px;
     background: transparent;
     border: none;
-    color: var(--accent-blue);
+    border-radius: 0 8px 8px 0;
+    color: var(--accent-blue-texto);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.show-password:hover {
+    text-decoration: underline;
 }
 
 .recuperacao-aviso {
@@ -184,7 +211,7 @@
     align-items: center;
     text-align: center;
     margin: 20px 0;
-    color: #94a3b8;
+    color: var(--text-placeholder);
     font-size: 13px;
 }
 
@@ -258,7 +285,8 @@
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    padding: 0;
+    min-height: 24px;
+    padding: 4px 2px;
 }
 
 .link-cadastrar:hover {

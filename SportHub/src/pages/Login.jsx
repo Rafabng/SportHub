@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import logo from "../assets/logo-sportshub.png";
 
 import './Login.css';
 
@@ -31,7 +30,7 @@ export default function Login({ aoLogar, aoNavegar }) {
             <div className="login-card">
 
                 <div className="login-header">
-                    <img src={logo} alt="SportHub" className='logo-png-login'/>
+                    <img src={"/logo-sportshub.png"} alt="SportHub" className='logo-png-login'/>
                     <h2>Entre na sua conta</h2>
                     <p>Acompanhe seu time do coração, jogos e competições favoritas em um só lugar.</p>
                 </div>

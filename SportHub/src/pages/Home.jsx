@@ -16,11 +16,12 @@ const FILTROS = [
     { id: "finalizado", rotulo: "Finalizados" },
 ];
 
+// Itens do menu que já têm página no App.jsx (os outros ainda não existem)
 const PAGINAS_DO_MENU = {
     inicio: "home",
 };
 
-export default function Home({ usuario, aoNavegar, aoSair }) {
+export default function Home({ usuario, aoNavegar, aoSair, esporte, aoSelecionarEsporte }) {
     const [filtro, setFiltro] = useState("todos");
 
     const jogosVisiveis = filtro === "todos"
@@ -44,7 +45,7 @@ export default function Home({ usuario, aoNavegar, aoSair }) {
     return (
         <>
             <Header usuario={usuario} aoNavegar={aoNavegar} aoSair={aoSair} />
-            <NavBar />
+            <NavBar ativo={esporte} aoSelecionar={aoSelecionarEsporte} />
 
             <div className="home__layout">
                 <Menu

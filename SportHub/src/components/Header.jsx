@@ -1,5 +1,3 @@
-import logo from "../assets/logo-sportshub.png";
-import logo_modo_claro from "../assets/logo-sportshub-modo-claro.png";
 import { useApp } from "../context/useApp.jsx";
 import { Search, Bell } from "lucide-react";
 import "./Header.css";
@@ -9,7 +7,7 @@ import UserMenu from "./UserMenu";
 export default function Header({usuario, aoNavegar, aoSair}) {
 
   const { tema } = useApp();
-  const logoAtual = tema === "light" ? logo_modo_claro : logo;
+  const logoAtual = tema === "light" ? "/logo-sportshub-claro.png" : "/logo-sportshub.png";
 
   return (
     <header className="header">
@@ -20,7 +18,7 @@ export default function Header({usuario, aoNavegar, aoSair}) {
             onClick={() => aoNavegar("home")}
             aria-label="Voltar para a página inicial"
         >
-            <img src={logoAtual} alt="SportHub" className="logo-png" />
+          <img src={logoAtual} alt="SportHub" className="logo-png" fetchPriority="high" />
         </button>
     </div>
 
@@ -38,12 +36,15 @@ export default function Header({usuario, aoNavegar, aoSair}) {
 
         {usuario ? (
           <>
-            <button className="notification-button">
+            <button 
+              className="notification-button"
+              aria-label="Notificações"
+            >
               <Bell size={21} />
             </button>
 
             <UserMenu usuario={usuario} aoSair={aoSair} />
-          </>
+          </> 
 
           ) : (
             <div className="auth-buttons">

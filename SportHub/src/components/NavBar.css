@@ -19,8 +19,12 @@
         border-color 0.25s ease;
 }
 
-.navbar a {
+.navbar button {
     flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
 
@@ -36,15 +40,20 @@
         color 0.2s ease;
 }
 
-.navbar a:hover {
+.navbar button:hover {
     background-color: var(--cor-hover);
     color: var(--cor-texto);
 }
 
-.navbar a.active {
+.navbar button.active {
     background-color: var(--cor-primaria);
     color: #ffffff;
     font-weight: 600;
+}
+
+.navbar button:focus-visible {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: -2px;
 }
 
 @media (max-width: 700px) {
@@ -54,7 +63,7 @@
         overflow-x: auto;
     }
 
-    .navbar a {
+    .navbar button {
         padding: 9px 12px;
         font-size: 14px;
     }

@@ -1,21 +1,43 @@
 import "./NavBar.css";
-function NavBar() {
 
-  return (
-    <nav className="navbar">
-        <a href="">☰ Todos</a>
-        <a href="/futebol">⚽ Futebol</a>
-        <a href="/basquete">🏀 Basquete</a>
-        <a href="/tenis">🎾 Tênis</a>
-        <a href="/fórmula1">🏎️ Fórmula 1</a>
-        <a href="/e_sports">🎮 E-sports</a>
-        <a href="/volei">🏐 Vôlei</a>
-        <a href="/futebolAmericano">🏈 Futebol Americano</a>
-        <a href="/fustal">⚽ Futsal</a>
-        <a href="/ufc">🥊 UFC</a>
-        <a href="/futebolAreia">⚽ Futebol de Areia</a>
-    </nav>
-  );
+const ESPORTES = [
+    { id: "todos", rotulo: "☰ Todos" },
+    { id: "futebol", rotulo: "⚽ Futebol" },
+    { id: "basquete", rotulo: "🏀 Basquete" },
+    { id: "tenis", rotulo: "🎾 Tênis" },
+    { id: "formula1", rotulo: "🏎️ Fórmula 1" },
+    { id: "e-sports", rotulo: "🎮 E-sports" },
+    { id: "volei", rotulo: "🏐 Vôlei" },
+    { id: "futebol-americano", rotulo: "🏈 Futebol Americano" },
+    { id: "futsal", rotulo: "⚽ Futsal" },
+    { id: "ufc", rotulo: "🥊 UFC" },
+    { id: "futebol-de-areia", rotulo: "⚽ Futebol de Areia" },
+];
+
+/**
+ * Props (vêm do App.jsx):
+ *  - ativo         id do esporte selecionado ("todos", "futebol", "basquete"...)
+ *  - aoSelecionar  chamada com o id do esporte clicado; o App decide para qual página ir
+ *
+ * Botões (e não <a href>): clicar não recarrega a página, então o usuário continua logado.
+ */
+function NavBar({ ativo = "todos", aoSelecionar }) {
+
+    return (
+        <nav className="navbar" aria-label="Esportes">
+            {ESPORTES.map((esporte) => (
+                <button
+                    key={esporte.id}
+                    type="button"
+                    className={ativo === esporte.id ? "active" : ""}
+                    aria-current={ativo === esporte.id ? "true" : undefined}
+                    onClick={() => aoSelecionar?.(esporte.id)}
+                >
+                    {esporte.rotulo}
+                </button>
+            ))}
+        </nav>
+    );
 }
 
 export default NavBar;

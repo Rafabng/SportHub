@@ -1,6 +1,6 @@
-import logoBrasileirao from "../assets/logo-brasileirao.png";
-import logoLaliga from "../assets/logo-la-liga.png";
-import logoChampions from "../assets/logo-champions.png";
+import logoBrasileirao from "../assets/logo-brasileirao.svg";
+import logoLaliga from "../assets/logo-la-liga.svg";
+import logoChampions from "../assets/logo-champions.svg";
 
 const campeonatos = [
     {
